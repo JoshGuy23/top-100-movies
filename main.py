@@ -7,5 +7,7 @@ webpage = response.text
 
 soup = BeautifulSoup(webpage, "html.parser")
 
-movie_titles = [movie.getText() for movie in soup.find_all(name="h3", class_="title")]
+movie_titles = list(reversed([movie.getText() for movie in soup.find_all(name="h3", class_="title")]))
 print(movie_titles)
+
+
